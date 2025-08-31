@@ -11,7 +11,7 @@ ENV GOSUMDB=sum.golang.org
 # Build Caddy with Route53 DNS module
 # Caddy 2.9.1 is compatible with route53 module v1.3.3 and above
 RUN xcaddy build v2.9.1 \
-    --with github.com/caddy-dns/route53@v1.3.5
+    --with github.com/caddy-dns/route53@v1.5.0
 
 # Runtime stage
 FROM caddy:2.9.1
@@ -23,4 +23,4 @@ COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 LABEL org.opencontainers.image.title="rproxy" \
       org.opencontainers.image.description="Caddy Server with Route53 DNS support" \
       org.opencontainers.image.source="https://github.com/rhysparry/rproxy" \
-      org.opencontainers.image.version="caddy-2.9.1-route53-1.3.5"
+      org.opencontainers.image.version="caddy-2.9.1-route53-1.5.0"

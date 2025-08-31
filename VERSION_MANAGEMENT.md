@@ -5,7 +5,7 @@ This document describes the process for managing and updating the versions of Ca
 ## Current Versions
 
 - **Caddy**: 2.9.1
-- **Route53 DNS Module**: v1.3.5
+- **Route53 DNS Module**: v1.5.0
 
 ## Version Compatibility
 
@@ -75,4 +75,5 @@ If issues arise with new versions:
 
 | Date | Caddy Version | Route53 Module | Notes |
 |------|---------------|----------------|-------|
+| 2025-01-27 | 2.9.1 | v1.5.0 | Updated Route53 module to v1.5.0 for improved compatibility |
 | 2025-08-31 | 2.9.1 | v1.3.5 | Initial pinned versions for compatibility |
