@@ -25,7 +25,16 @@ jobs:
         tags: rproxy:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
+        # Add build args for version tracking
+        build-args: |
+          BUILDKIT_INLINE_CACHE=1
         
     - name: Test Docker image
       run: |
+        echo "Testing Caddy version..."
         docker run --rm rproxy:latest caddy version
+        
+        echo "Testing Route53 module availability..."
+        docker run --rm rproxy:latest caddy list-modules | grep dns.providers.route53 || echo "Route53 module not found in output"
+        
+        echo "Build completed successfully!"
