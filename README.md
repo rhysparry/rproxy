@@ -30,3 +30,5 @@ The image uses the standard Caddy configuration. You can mount your Caddyfile as
 ```bash
 docker run -d -p 80:80 -p 443:443 -v /path/to/Caddyfile:/etc/caddy/Caddyfile rproxy
 ```
+
+See `Caddyfile.example` for an example configuration using Route53 DNS challenges for automatic HTTPS.
