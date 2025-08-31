@@ -1,0 +1,14 @@
+# Example Caddyfile demonstrating Route53 DNS challenge
+# This file shows how to use the Route53 module for automatic HTTPS
+
+example.com {
+    tls {
+        dns route53 {
+            access_key_id {env.AWS_ACCESS_KEY_ID}
+            secret_access_key {env.AWS_SECRET_ACCESS_KEY}
+            region {env.AWS_REGION}
+        }
+    }
+    
+    respond "Hello from Caddy with Route53 support!"
+}
